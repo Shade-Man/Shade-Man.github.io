@@ -1,0 +1,859 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) {
+  window.location.href = 'https://support.dmeng.net/upgrade-your-browser.html';
+}</script><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="msvalidate.01" content="4A74D721C3FD31A2CABAE02E67DD0F0B"><meta name="description" content="2021 贵青杯 Python 竞赛题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021 年贵青杯竞赛题">
+<meta property="og:url" content="https://shade-man.github.io/2021/12/11/senior-python-guiqingbei21/index.html">
+<meta property="og:site_name" content="Shademan&#39;s blog">
+<meta property="og:description" content="2021 贵青杯 Python 竞赛题">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-11T01:19:23.000Z">
+<meta property="article:modified_time" content="2022-04-30T05:50:54.000Z">
+<meta property="article:author" content="Shade-Man">
+<meta property="article:tag" content="比赛">
+<meta name="twitter:card" content="summary"><title>2021 年贵青杯竞赛题 | Shademan's blog</title><link ref="canonical" href="https://shade-man.github.io/2021/12/11/senior-python-guiqingbei21/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement('script');
+  hm.src = 'https://hm.baidu.com/hm.js?ce37cc7d4089aee77d50dde83478fc39';
+  hm.async = true;
+
+  if (true) {
+    hm.setAttribute('data-pjax', '');
+  }
+  var s = document.getElementsByTagName('script')[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: {"colWidth":"220px","gapX":"10px"},
+  lazyload: true,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">2021 年贵青杯竞赛题</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="发表时间" data-popover-pos="up"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__value">2021-12-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon" data-popover="修改时间" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2022-04-30</span></span><span class="post-meta-item post-meta-item--visitors"><span class="post-meta-item__icon" data-popover="阅读次数" data-popover-pos="up"><i class="fas fa-eye"></i></span><span class="post-meta-item__value" id="busuanzi_value_page_pv"></span></span></div></header><div class="post-body"><p>2021 贵青杯 Python 竞赛题</p>
+<span id="more"></span>
+
+        <h2 id="乘车费用">
+          <a href="#乘车费用" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#乘车费用"></a> 乘车费用</h2>
+      
+
+        <h3 id="描述">
+          <a href="#描述" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#描述"></a> 描述</h3>
+      
+<p>星期天上午小红乘出租车去本市的奶奶家。出租车计价方案为：<br>
+3 km 以内（包括 3 km）起步价是 13 元，<br>
+超过 3 km 之后按 2.3 元/km 计价，<br>
+整个乘车途中另加 1 元钱的燃油费。</p>
+<p>已知：小红到奶奶家的路程为 N km，请你计算一下小红到奶奶家的出租车费用是多少元？</p>
+
+        <h3 id="输入">
+          <a href="#输入" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输入"></a> 输入</h3>
+      
+<p>输入 1 个整数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>30</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">N (1 \leq N \leq 30)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mclose">)</span></span></span></span> 表示路程，单位：km。</p>
+
+        <h3 id="输出">
+          <a href="#输出" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输出"></a> 输出</h3>
+      
+<p>输出 1 个数，表示出租车费用，只输出整数部分。</p>
+
+        <h3 id="样例">
+          <a href="#样例" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#样例"></a> 样例</h3>
+      
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">2</span></span><br><span class="line"><span class="number">14</span></span><br></pre></td></tr></tbody></table></div></figure>
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">15</span></span><br><span class="line"><span class="number">41</span></span><br></pre></td></tr></tbody></table></div></figure>
+
+        <h2 id="彩票">
+          <a href="#彩票" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#彩票"></a> 彩票</h2>
+      
+
+        <h3 id="描述-2">
+          <a href="#描述-2" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#描述-2"></a> 描述</h3>
+      
+<p>大乐透彩票的获奖编码由两位非零数组成。<br>
+根据获奖编码和用户的输入，可以确定用户是否获奖，具体规则为：</p>
+<ul>
+<li>如果用户输入的数与获奖编码完全相同，奖金 100 元</li>
+<li>如果用户输入的所有数字匹配获奖编码的所有数字，奖金 20 元</li>
+<li>如果用户输入的数字能够匹配获奖编码的一个数字，奖金 2 元</li>
+<li>如果没有获奖，则奖金 0 元</li>
+</ul>
+<p>程序输入获奖编码和用户的输入，判断用户最终能获得多少奖金。</p>
+
+        <h3 id="输入-2">
+          <a href="#输入-2" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输入-2"></a> 输入</h3>
+      
+<p>你的程序将会接受两个两位整数，分别表示获奖编码和用户的输入。</p>
+
+        <h3 id="输出-2">
+          <a href="#输出-2" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输出-2"></a> 输出</h3>
+      
+<p>输出一个整数，表示用户的奖金。</p>
+
+        <h3 id="样例-2">
+          <a href="#样例-2" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#样例-2"></a> 样例</h3>
+      
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">97</span> <span class="number">79</span></span><br><span class="line"><span class="number">20</span></span><br></pre></td></tr></tbody></table></div></figure>
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">36</span> <span class="number">43</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></tbody></table></div></figure>
+
+        <h2 id="奇怪的信">
+          <a href="#奇怪的信" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#奇怪的信"></a> 奇怪的信</h2>
+      
+
+        <h3 id="描述-3">
+          <a href="#描述-3" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#描述-3"></a> 描述</h3>
+      
+<p>一天，小明收到一张奇怪的信，信上要小明计算出给定数各个位上数字为偶数的和。<br>
+小明很苦恼，想请你帮忙解决这个问题。</p>
+<blockquote>
+<p>例：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5548</mn></mrow><annotation encoding="application/x-tex">5548</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">5</span><span class="mord">4</span><span class="mord">8</span></span></span></span>，结果为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>+</mo><mn>8</mn><mo>=</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">4 + 8 = 12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span></span></span></span></p>
+</blockquote>
+
+        <h3 id="输入-3">
+          <a href="#输入-3" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输入-3"></a> 输入</h3>
+      
+<p>输入一个正整数，保证数字在 32 位整型范围内。</p>
+
+        <h3 id="输出-3">
+          <a href="#输出-3" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输出-3"></a> 输出</h3>
+      
+<p>输出一个整数表示答案。</p>
+
+        <h3 id="样例-3">
+          <a href="#样例-3" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#样例-3"></a> 样例</h3>
+      
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">415326</span></span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></tbody></table></div></figure>
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">3262</span></span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></tbody></table></div></figure>
+
+        <h2 id="闪电">
+          <a href="#闪电" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#闪电"></a> 闪电</h2>
+      
+
+        <h3 id="描述-4">
+          <a href="#描述-4" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#描述-4"></a> 描述</h3>
+      
+<p>看吧，星星只有在夜里才璀璨夺目啊。而闪电，则以更耀眼的姿势一闪而过。</p>
+<p>夜里，乐乐走在路上，今晚不见璀璨的星星。本是宁静的夜色，猛地一道闪电劈过，正砸乐乐的头顶。</p>
+<p>第二天乐乐醒来并发现自己在路上躺着，想起昨晚最后看到的一道闪电，知道事情并没有那么简单。脑子仿佛像是被闪电劈傻了一样，乐乐突然很想打代码，具体的看看闪电的模样，但是他的脑子被劈的有点焦，所以他只能请求你帮他打下这样的代码，并展示给他看。</p>
+<blockquote>
+<p><s>就尼玛离谱 <em>–By Author</em></s></p>
+</blockquote>
+
+        <h3 id="输入-4">
+          <a href="#输入-4" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输入-4"></a> 输入</h3>
+      
+<p>第一行一个正整数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mn>0</mn><mo>&lt;</mo><mi>n</mi><mo>&lt;</mo><mn>100</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n (0 &lt; n &lt; 100)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mclose">)</span></span></span></span>，表示闪电的大小。</p>
+
+        <h3 id="输出-4">
+          <a href="#输出-4" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输出-4"></a> 输出</h3>
+      
+<p>输出数据对应一个大小的闪电，行末无空格。</p>
+
+        <h3 id="样例-4">
+          <a href="#样例-4" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#样例-4"></a> 样例</h3>
+      
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">1</span></span><br><span class="line"> *</span><br><span class="line">**</span><br><span class="line">*</span><br></pre></td></tr></tbody></table></div></figure>
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">2</span></span><br><span class="line">  *</span><br><span class="line"> *</span><br><span class="line">***</span><br><span class="line"> *</span><br><span class="line">*</span><br></pre></td></tr></tbody></table></div></figure>
+
+        <h2 id="挂盐水">
+          <a href="#挂盐水" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#挂盐水"></a> 挂盐水</h2>
+      
+<blockquote>
+<p><strong>Note:</strong><br>
+此题输入输出描述与样例不符<br>
+已做出修改使其与样例匹配，原题见 <a href="#%E6%8C%82%E7%9B%90%E6%B0%B4%E5%8E%9F%E9%A2%98">挂盐水原题</a></p>
+</blockquote>
+
+        <h3 id="描述-5">
+          <a href="#描述-5" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#描述-5"></a> 描述</h3>
+      
+<p>挂盐水的时候，如果滴起来有规律，先是滴一滴，停一下；然后滴二滴，停一下；再滴三滴，停一下…</p>
+<p>这瓶盐水一共有 V mL，每一滴是 D mL。<br>
+若每一滴的速度是 1s（最后一滴不到 D mL 也算 1s），停一下的时间也是 1s。<br>
+那么这瓶水什么时候能挂完呢？</p>
+
+        <h3 id="输入-5">
+          <a href="#输入-5" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输入-5"></a> 输入</h3>
+      
+<p>输入两个数据, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo separator="true">,</mo><mi>D</mi><mo stretchy="false">(</mo><mn>0</mn><mo>&lt;</mo><mi>D</mi><mo>&lt;</mo><mi>V</mi><mo>&lt;</mo><mn>5000</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">V, D (0 &lt; D &lt; V &lt; 5000)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mopen">(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mclose">)</span></span></span></span></p>
+
+        <h3 id="输出-5">
+          <a href="#输出-5" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输出-5"></a> 输出</h3>
+      
+<p>输出挂完盐水需要的时间。</p>
+
+        <h3 id="样例-5">
+          <a href="#样例-5" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#样例-5"></a> 样例</h3>
+      
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">10</span> <span class="number">1</span></span><br><span class="line"><span class="number">13</span></span><br></pre></td></tr></tbody></table></div></figure>
+
+        <h2 id="彩笔">
+          <a href="#彩笔" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#彩笔"></a> 彩笔</h2>
+      
+
+        <h3 id="描述-6">
+          <a href="#描述-6" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#描述-6"></a> 描述</h3>
+      
+<p>乐乐喜欢画画，她有很多颜色的彩笔：“赤、橙、黄、绿、蓝、靛、紫、黑”。<br>
+他还有一个 16 格的彩笔盒，每个格子正好放一支彩笔。每次上课会根据需要装彩笔，并且都会装满彩笔盒。</p>
+<p>有时彩笔盒里会出现 2 支颜色相同的彩笔（颜色相同的笔只会有一种，且最多只有 2 支）<br>
+例如：</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">D</th>
+<th style="text-align:center">E</th>
+<th style="text-align:center">F</th>
+<th style="text-align:center">A</th>
+<th style="text-align:center">H</th>
+<th style="text-align:center">I</th>
+<th style="text-align:center">J</th>
+<th style="text-align:center">P</th>
+<th style="text-align:center">L</th>
+<th style="text-align:center">M</th>
+<th style="text-align:center">N</th>
+<th style="text-align:center">O</th>
+<th style="text-align:center">T</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">13</td>
+<td style="text-align:center">14</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">16</td>
+</tr>
+</tbody>
+</table></div>
+<p>其中每个大写字母代表一种颜色的彩笔，第 1 支与第 7 支的彩笔颜色相同。</p>
+
+        <h3 id="输入-6">
+          <a href="#输入-6" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输入-6"></a> 输入</h3>
+      
+<p>输入只有 16 个大写字母，分别代表彩笔的不同颜色。</p>
+
+        <h3 id="输出-6">
+          <a href="#输出-6" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输出-6"></a> 输出</h3>
+      
+<p>如果 16 支笔的颜色各不相同，输出 <code>different</code>。</p>
+<p>若有 2 支笔的颜色一样，以先小后大的顺序输出 2 支相同颜色笔的位置序号 (用空格分开)</p>
+
+        <h3 id="样例-6">
+          <a href="#样例-6" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#样例-6"></a> 样例</h3>
+      
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; ABCDEFAHIJPLMNOT</span><br><span class="line"><span class="number">1</span> <span class="number">7</span></span><br></pre></td></tr></tbody></table></div></figure>
+
+        <h2 id="翻纸牌">
+          <a href="#翻纸牌" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#翻纸牌"></a> 翻纸牌</h2>
+      
+
+        <h3 id="描述-7">
+          <a href="#描述-7" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#描述-7"></a> 描述</h3>
+      
+<p>有 n 张纸牌,每张纸牌上分别标注着 1、2、3、4…n 个数字，初始时纸牌数字面朝上。<br>
+先将 1 的倍数的纸牌翻过来，再将 2 的倍数翻过来，一直翻到 n 的倍数的纸牌。</p>
+<p>统计翻到最后数字面向下的纸牌分别是哪些？</p>
+<blockquote>
+<p><strong>Example:</strong><br>
+有 1、2、3 张纸牌，开始时纸牌数字面朝上，<br>
+第一次将所有序号为 1 的倍数的纸牌翻转<br>
+第二次将所有序号是 2 的倍数的纸牌再翻转<br>
+第三次将所有序号是 3 的倍数纸牌再翻转<br>
+最后数字面向下的纸牌是序号为 1 的那张。</p>
+</blockquote>
+
+        <h3 id="输入-7">
+          <a href="#输入-7" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输入-7"></a> 输入</h3>
+      
+<p>输入数字 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>n</mi><mo>≤</mo><mn>10000</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n (n \leq 10000)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mclose">)</span></span></span></span>。</p>
+
+        <h3 id="输出-7">
+          <a href="#输出-7" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输出-7"></a> 输出</h3>
+      
+<p>在同一行输出数字面向下的纸牌数字，两个数字之间用一个空格隔开。</p>
+
+        <h3 id="样例-7">
+          <a href="#样例-7" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#样例-7"></a> 样例</h3>
+      
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></tbody></table></div></figure>
+
+        <h2 id="最长最短单词">
+          <a href="#最长最短单词" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#最长最短单词"></a> 最长最短单词</h2>
+      
+
+        <h3 id="描述-8">
+          <a href="#描述-8" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#描述-8"></a> 描述</h3>
+      
+<p>输入 1 行句子（不多于 200 个单词，每个单词长度不超过 100），只包含字母、空格。<br>
+单词由至少一个连续的字母构成，空格是单词间的间隔。</p>
+<blockquote>
+<p><s>你在教我做事? <em>–By Author</em></s></p>
+</blockquote>
+<p>试输出第 1 个最长的单词和第 1 个最短单词。</p>
+
+        <h3 id="输入-8">
+          <a href="#输入-8" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输入-8"></a> 输入</h3>
+      
+<p>一行句子。</p>
+
+        <h3 id="输出-8">
+          <a href="#输出-8" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输出-8"></a> 输出</h3>
+      
+<ul>
+<li>第 1 行，第一个最长的单词</li>
+<li>第 2 行，第一个最短的单词</li>
+</ul>
+
+        <h3 id="样例-8">
+          <a href="#样例-8" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#样例-8"></a> 样例</h3>
+      
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; I am studying Programming language C <span class="keyword">in</span> Peking University</span><br><span class="line">Programming</span><br><span class="line">I</span><br></pre></td></tr></tbody></table></div></figure>
+
+        <h2 id="敲-7">
+          <a href="#敲-7" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#敲-7"></a> 敲 7</h2>
+      
+
+        <h3 id="描述-9">
+          <a href="#描述-9" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#描述-9"></a> 描述</h3>
+      
+<p>有一种酒桌游戏叫做“敲 7”，规则是从一个人开始，说出任意数字，其他人会顺序往后报，如果一个数字包含 7，或者是 7 的倍数，那么需要敲打杯子或盘子，不能说出。</p>
+<p>现在 n 个人围坐在一个圆桌周围，他们编号从 1 到 n 顺时针排列。从某一人开始报出一个数字，其他人会按照顺时针方向顺序往后报(加一)，如果某个人的数字包含 7，或者是 7 的倍数，那么他将退出游戏，下一个人继续接着报，直到剩一个人为止。</p>
+
+        <h3 id="输入-9">
+          <a href="#输入-9" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输入-9"></a> 输入</h3>
+      
+<p>第一行输入三个整数, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo separator="true">,</mo><mi>t</mi><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><mi>m</mi><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>1000</mn><mi mathvariant="normal">，</mi><mn>1</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>100</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n, m, t (1 \leq m \leq n \leq 1000，1 \leq t \leq 100)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord cjk_fallback">，</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mclose">)</span></span></span></span></p>
+<blockquote>
+<p>n 代表总人数,  m 代表从第 m 个人开始报数，且其报出的数字是 t</p>
+</blockquote>
+<p>接下来输入 n 行字符串，代表他们的名字，字符串的长度不超过 20。</p>
+
+        <h3 id="输出-9">
+          <a href="#输出-9" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输出-9"></a> 输出</h3>
+      
+<p>输出剩下的那个人的名字。</p>
+
+        <h3 id="样例-9">
+          <a href="#样例-9" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#样例-9"></a> 样例</h3>
+      
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">5</span> <span class="number">3</span> <span class="number">20</span></span><br><span class="line">&gt; donglali</span><br><span class="line">&gt; nanlali</span><br><span class="line">&gt; xilali</span><br><span class="line">&gt; beilali</span><br><span class="line">&gt; chuanpu</span><br><span class="line">chuanpu</span><br></pre></td></tr></tbody></table></div></figure>
+
+        <h2 id="采购奖品">
+          <a href="#采购奖品" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#采购奖品"></a> 采购奖品</h2>
+      
+
+        <h3 id="描述-10">
+          <a href="#描述-10" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#描述-10"></a> 描述</h3>
+      
+<p>马上又到了新年联欢，乐乐作为班里的班长，负责组织策划新年联欢活动，<br>
+他决定采购一些奖品奖励积极参与每个项目活动的同学。</p>
+<p>为了激励更多的人参与，需采购的奖品数目越多越好。<br>
+班费中可支出的钱数为 m 元，现给定商店中 n 种物品的价格和库存数量<br>
+怎样才能购得最多的物品数？</p>
+
+        <h3 id="输入-10">
+          <a href="#输入-10" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输入-10"></a> 输入</h3>
+      
+<p>输入一共 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(n + 1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 行：</p>
+<p>第一行包含两个正整数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo separator="true">,</mo><mi>n</mi><mo stretchy="false">(</mo><mn>1</mn><mo>&lt;</mo><mi>m</mi><mo>≤</mo><mn>10000</mn><mo separator="true">,</mo><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>100</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">m, n (1 &lt; m \leq 10000, 1 \leq n \leq 100)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mclose">)</span></span></span></span><br>
+可支出的费用为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 元和可供购买的物品有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 种</p>
+<p>接下来的 n 行，每行包含两个数 (空格分隔) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>b</mi><mi>i</mi></msub><mo stretchy="false">(</mo><msub><mi>a</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>b</mi><mi>i</mi></msub><mo>≤</mo><mn>1000</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">a_i, b_i (a_i, b_i \leq 1000)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mclose">)</span></span></span></span><br>
+物品的单价为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 和库存数量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>b</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">b_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+
+        <h3 id="输出-10">
+          <a href="#输出-10" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输出-10"></a> 输出</h3>
+      
+<p>最多可以购买的物品数量</p>
+
+        <h3 id="样例-10">
+          <a href="#样例-10" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#样例-10"></a> 样例</h3>
+      
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">500</span> <span class="number">6</span></span><br><span class="line">&gt; <span class="number">100</span> <span class="number">3</span></span><br><span class="line">&gt; <span class="number">20</span> <span class="number">15</span></span><br><span class="line">&gt; <span class="number">50</span> <span class="number">10</span></span><br><span class="line">&gt; <span class="number">35</span> <span class="number">5</span></span><br><span class="line">&gt; <span class="number">5</span> <span class="number">6</span></span><br><span class="line">&gt; <span class="number">60</span> <span class="number">2</span></span><br><span class="line"><span class="number">25</span></span><br></pre></td></tr></tbody></table></div></figure>
+
+        <h2 id="挂盐水原题">
+          <a href="#挂盐水原题" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#挂盐水原题"></a> 挂盐水原题</h2>
+      
+
+        <h3 id="描述-11">
+          <a href="#描述-11" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#描述-11"></a> 描述</h3>
+      
+<p>挂盐水的时候，如果滴起来有规律，先是滴一滴，停一下；然后滴二滴，停一下；再滴三滴，停一下…</p>
+<p>现在有一个问题：这瓶盐水一共有 V mL，每一滴是 D mL</p>
+<p>如果每一滴的速度是 1s（假设最后一滴不到 D mL，则花费的时间也算 1s），停一下的时间也是 1s。</p>
+<p>那么这瓶水什么时候能挂完呢？</p>
+
+        <h3 id="输入-11">
+          <a href="#输入-11" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输入-11"></a> 输入</h3>
+      
+<p>输入数据包含多个测试实例，每个实例占一行 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo separator="true">,</mo><mi>D</mi><mo stretchy="false">(</mo><mn>0</mn><mo>&lt;</mo><mi>D</mi><mo>&lt;</mo><mi>V</mi><mo>&lt;</mo><mn>5000</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">V, D (0 &lt; D &lt; V &lt; 5000)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mopen">(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mclose">)</span></span></span></span></p>
+
+        <h3 id="输出-11">
+          <a href="#输出-11" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#输出-11"></a> 输出</h3>
+      
+<p>对于每组测试数据，请输出挂完盐水需要的时间，每个实例的输出占一行。</p>
+
+        <h3 id="样例-11">
+          <a href="#样例-11" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#样例-11"></a> 样例</h3>
+      
+<figure class="highlight powershell"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">10</span> <span class="number">1</span></span><br><span class="line"><span class="number">13</span></span><br></pre></td></tr></tbody></table></div></figure>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://shade-man.github.io">Shade-Man</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://shade-man.github.io/2021/12/11/senior-python-guiqingbei21/">https://shade-man.github.io/2021/12/11/senior-python-guiqingbei21/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://shade-man.github.io/tags/%E6%AF%94%E8%B5%9B/">比赛</a></span></div><div class="post-share"><div class="social-share" data-sites="qzone, qq, weibo, wechat, douban, linkedin, facebook, twitter, google">Share to: </div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/12/16/how-to-edit-blog/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">如何在本博客发布文章</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/10/05/senior-python-test21/"><span class="paginator-prev__text">Python 高中组比赛练习题</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="gitalk-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%98%E8%BD%A6%E8%B4%B9%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">
+           乘车费用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">
+           描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5"><span class="toc-number">1.2.</span> <span class="toc-text">
+           输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA"><span class="toc-number">1.3.</span> <span class="toc-text">
+           输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B"><span class="toc-number">1.4.</span> <span class="toc-text">
+           样例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%A9%E7%A5%A8"><span class="toc-number">2.</span> <span class="toc-text">
+           彩票</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0-2"><span class="toc-number">2.1.</span> <span class="toc-text">
+           描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-2"><span class="toc-number">2.2.</span> <span class="toc-text">
+           输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-2"><span class="toc-number">2.3.</span> <span class="toc-text">
+           输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B-2"><span class="toc-number">2.4.</span> <span class="toc-text">
+           样例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%87%E6%80%AA%E7%9A%84%E4%BF%A1"><span class="toc-number">3.</span> <span class="toc-text">
+           奇怪的信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0-3"><span class="toc-number">3.1.</span> <span class="toc-text">
+           描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-3"><span class="toc-number">3.2.</span> <span class="toc-text">
+           输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-3"><span class="toc-number">3.3.</span> <span class="toc-text">
+           输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B-3"><span class="toc-number">3.4.</span> <span class="toc-text">
+           样例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AA%E7%94%B5"><span class="toc-number">4.</span> <span class="toc-text">
+           闪电</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0-4"><span class="toc-number">4.1.</span> <span class="toc-text">
+           描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-4"><span class="toc-number">4.2.</span> <span class="toc-text">
+           输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-4"><span class="toc-number">4.3.</span> <span class="toc-text">
+           输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B-4"><span class="toc-number">4.4.</span> <span class="toc-text">
+           样例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%82%E7%9B%90%E6%B0%B4"><span class="toc-number">5.</span> <span class="toc-text">
+           挂盐水</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0-5"><span class="toc-number">5.1.</span> <span class="toc-text">
+           描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-5"><span class="toc-number">5.2.</span> <span class="toc-text">
+           输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-5"><span class="toc-number">5.3.</span> <span class="toc-text">
+           输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B-5"><span class="toc-number">5.4.</span> <span class="toc-text">
+           样例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%A9%E7%AC%94"><span class="toc-number">6.</span> <span class="toc-text">
+           彩笔</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0-6"><span class="toc-number">6.1.</span> <span class="toc-text">
+           描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-6"><span class="toc-number">6.2.</span> <span class="toc-text">
+           输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-6"><span class="toc-number">6.3.</span> <span class="toc-text">
+           输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B-6"><span class="toc-number">6.4.</span> <span class="toc-text">
+           样例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BF%BB%E7%BA%B8%E7%89%8C"><span class="toc-number">7.</span> <span class="toc-text">
+           翻纸牌</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0-7"><span class="toc-number">7.1.</span> <span class="toc-text">
+           描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-7"><span class="toc-number">7.2.</span> <span class="toc-text">
+           输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-7"><span class="toc-number">7.3.</span> <span class="toc-text">
+           输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B-7"><span class="toc-number">7.4.</span> <span class="toc-text">
+           样例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E9%95%BF%E6%9C%80%E7%9F%AD%E5%8D%95%E8%AF%8D"><span class="toc-number">8.</span> <span class="toc-text">
+           最长最短单词</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0-8"><span class="toc-number">8.1.</span> <span class="toc-text">
+           描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-8"><span class="toc-number">8.2.</span> <span class="toc-text">
+           输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-8"><span class="toc-number">8.3.</span> <span class="toc-text">
+           输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B-8"><span class="toc-number">8.4.</span> <span class="toc-text">
+           样例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B2-7"><span class="toc-number">9.</span> <span class="toc-text">
+           敲 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0-9"><span class="toc-number">9.1.</span> <span class="toc-text">
+           描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-9"><span class="toc-number">9.2.</span> <span class="toc-text">
+           输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-9"><span class="toc-number">9.3.</span> <span class="toc-text">
+           输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B-9"><span class="toc-number">9.4.</span> <span class="toc-text">
+           样例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%87%E8%B4%AD%E5%A5%96%E5%93%81"><span class="toc-number">10.</span> <span class="toc-text">
+           采购奖品</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0-10"><span class="toc-number">10.1.</span> <span class="toc-text">
+           描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-10"><span class="toc-number">10.2.</span> <span class="toc-text">
+           输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-10"><span class="toc-number">10.3.</span> <span class="toc-text">
+           输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B-10"><span class="toc-number">10.4.</span> <span class="toc-text">
+           样例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%82%E7%9B%90%E6%B0%B4%E5%8E%9F%E9%A2%98"><span class="toc-number">11.</span> <span class="toc-text">
+           挂盐水原题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0-11"><span class="toc-number">11.1.</span> <span class="toc-text">
+           描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-11"><span class="toc-number">11.2.</span> <span class="toc-text">
+           输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-11"><span class="toc-number">11.3.</span> <span class="toc-text">
+           输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B-11"><span class="toc-number">11.4.</span> <span class="toc-text">
+           样例</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">Shade Man</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/Shade-Man" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/star-sea-46" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/329963941" target="_blank" rel="noopener" data-popover="social.bili" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">bili</span></a><a class="sidebar-ov-social-item" href="mailto:z1480583170@163.com" target="_blank" rel="noopener" data-popover="social.mail" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="far fa-envelope"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021~2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Shade-Man</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="访问人数"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon" data-popover-pos="up" data-popover="浏览总量"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,0,0" opacity="0.6" count="99" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.json';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (true) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" rel="stylesheet" type="text/css"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css"><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js"></script><script>function initQuicklink() {
+  quicklink({
+    timeout: '10000',
+    priority: true,
+    ignores: [uri => uri.includes('#'), uri => uri === 'https://shade-man.github.io/2021/12/11/senior-python-guiqingbei21/', /\/api\/?/,uri => uri.includes('.xml'),uri => uri.includes('.zip'),(uri, el) => el.hasAttribute('nofollow'),(uri, el) => el.hasAttribute('noprefetch')]
+  });
+}
+
+if (true || false) {
+  initQuicklink();
+} else {
+  window.addEventListener('DOMContentLoaded', initQuicklink, false);
+}</script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script></div><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js" data-pjax=""></script><script src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js" data-pjax=""></script><script data-pjax="">function loadGitalk () {
+  if (!document.getElementById('gitalk-container')) {
+    return;
+  }
+
+  var gitalk = new Gitalk({
+    id: md5(window.location.pathname.slice(1)),
+    clientID: '9a9670ece4c6cf529f08',
+    clientSecret: '74b5f153a963badb60f9849c9ab2099435c8452f',
+    repo: 'Shade-Man.github.io',
+    owner: 'Shade-Man',
+    admin: ['Stars-sea'],
+    distractionFreeMode: 'false',
+    language: 'zh-CN'
+  });
+  gitalk.render('gitalk-container');
+}
+
+if (true) {
+  loadGitalk();
+} else {
+  window.addEventListener('DOMContentLoaded', loadGitalk, false);
+}</script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script type="application/json" src="/search.json"></script></body></html>
